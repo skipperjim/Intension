@@ -3,13 +3,17 @@ var TopDownGame = TopDownGame || {};
 //title screen
 TopDownGame.Game = function(){};
 
+var sprite;
+var stonePool;
+
 TopDownGame.Game.prototype = {
     create: function() {
         // Define variables and constants
         this.stoneQty = 0;
         this.throwDelay = 200;
-        this.THROW_OBJECT_SPEED = 400;
-        this.nextThrowAt = 0;
+        this.throwSpeed = 400;
+        this.throwRate = 200;
+        this.nextThrow = 0;
         this.aimDirection;
         this.health = 100;
         
@@ -48,16 +52,19 @@ TopDownGame.Game.prototype = {
         this.cursors = this.game.input.keyboard.createCursorKeys();
         
         // Create an object pool of stones
-        this.stonePool = this.game.add.group();
-        for(var i = 0; i < 1; i++){
+        stonePool = this.game.add.group();
+        
+        for(var i = 0; i < 50; i++){
             // Create each stone and add it to the group
             var stone = this.game.add.sprite(0, 0, 'stone');
-            this.stonePool.add(stone);
+            stonePool.add(stone);
             stone.anchor.setTo(0.5, 0.5);
             this.game.physics.enable(stone, Phaser.Physics.ARCADE);
             // Set its initial state to "dead"
             stone.kill();
         }
+        stonePool.setAll('checkWorldBounds', true);
+        stonePool.setAll('outOfBoundsKill', true);
         
         // Instruction Text
         this.instructions = this.add.text(115, 97, 'Use WASD or Arrows to move. \nLeft-click to attack.', {font: '8px monospace', fill: '#fff', align: 'center' });
@@ -134,40 +141,26 @@ TopDownGame.Game.prototype = {
         this.statText.setText('Health: '+this.health+'\nStones: '+this.stoneQty+'\n');
     },
     throw: function(){
-        if(this.nextThrowAt > this.time.now){
-            return;
-        }
-        // If player is out of ammo
-        if(this.stoneQty === 0){
-            console.log("No more stones. Collect some.");
-            return;
-        }
-        this.nextThrowAt = this.time.now + this.throwDelay;
-        // Get a dead stone from the pool
-        var stone = this.stonePool.getFirstDead();
-        // If no stones available, don't throw
-        if(stone === null || stone === undefined) return;
+        if(this.time.now > this.nextThrow && stonePool.countDead() > 0 && this.stoneQty > 0){
+            this.nextThrow = this.time.now + this.throwRate;
+            var stone = stonePool.getFirstDead();
+            // Set the stone position to the player position
+            stone.reset(this.player.x, this.player.y);
+            stone.rotation = this.player.rotation;
+            // Throw it in the right direction
+            this.physics.arcade.moveToPointer(stone, 400);
 
-        // Revive the bullet and make it "alive"
-        stone.revive();
-        // Kill stone when they leave world
-        stone.checkWorldBounds = true;
-        stone.outOfBoundsKill = true;
-        // Set the stone position to the player position
-        stone.reset(this.player.x, this.player.y);
-        stone.rotation = this.player.rotation;
-        // Throw it in the right direction
-        stone.body.velocity.x = Math.cos(this.player.aimDirection) * this.THROW_OBJECT_SPEED;
-        stone.body.velocity.y = Math.sin(this.player.aimDirection) * this.THROW_OBJECT_SPEED; 
-        this.stoneQty--;
-        this.updateStatText();
+            // Update player quantity for item
+            this.stoneQty--;
+            this.updateStatText();   
+        }
     },
     update: function() {
         //collision
         this.game.physics.arcade.collide(this.player, this.blockedLayer);
         this.game.physics.arcade.overlap(this.player, this.items, this.collect, null, this);
         this.game.physics.arcade.overlap(this.player, this.doors, this.enterDoor, null, this);
-        this.game.physics.arcade.overlap(this.stonePool, this.enemy, this.enemyHit, null, this);
+        this.game.physics.arcade.overlap(stonePool, this.enemy, this.enemyHit, null, this);
 
         //player movement
         this.player.body.velocity.y = 0;
