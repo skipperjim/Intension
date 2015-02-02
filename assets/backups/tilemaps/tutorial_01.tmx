@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16">
+  <image source="../images/tiles.png" width="705" height="1280"/>
+ </tileset>
+ <layer name="backgroundLayer" width="20" height="20">
+  <data encoding="csv">
+1819,3307,3307,3307,3307,3307,3307,1820,3307,3307,3307,3307,3307,3307,3307,1819,3307,3307,3307,1818,
+3307,3307,1818,3307,3307,3307,1819,3307,3307,3307,3307,3307,3307,1819,3307,3307,3307,1779,1780,3307,
+3307,3307,3307,1819,3307,3307,3307,3307,3307,1818,3307,3307,3307,3307,3307,1818,3307,3307,3307,3307,
+3307,3307,3307,3307,3307,3307,1769,3307,3307,3307,3307,1820,3307,3307,3307,3307,3307,3307,3307,3307,
+3307,1820,3307,1769,3307,3307,3307,3307,3307,3307,3307,3307,1779,1780,3307,3307,3307,3307,1820,3307,
+3307,3307,3307,3307,3307,1820,3307,3307,3307,3307,1818,3307,3307,3307,3307,1819,1779,1780,3307,3307,
+3307,3307,1818,3307,1769,3307,3307,1818,1819,3307,3307,1819,1820,1819,3307,3307,1819,1820,3307,3307,
+3307,1819,1818,3307,3307,3307,1769,3307,3307,3307,3307,1818,3307,3307,1818,3307,3307,3307,3307,1819,
+1818,3307,3307,3307,3307,3307,3307,3307,3307,3307,3307,3307,3307,1819,3307,3307,1779,1780,3307,3307,
+3307,3307,3307,3307,1820,3307,3307,1819,3307,3307,3307,1819,1818,50,1818,1818,1818,1819,3307,3307,
+1769,3307,3307,3307,3307,3307,3307,3307,1820,3307,1819,3307,3307,1818,1818,3307,1819,1820,1820,1819,
+3307,3307,1820,3307,3307,3307,1769,3307,3307,3307,3307,3307,3307,3307,1818,3307,3307,3307,3307,3307,
+3307,3307,3307,3307,3307,3307,3307,3307,1820,3307,3307,3307,3307,1819,3307,3307,3307,3307,1818,3307,
+3307,3307,3307,3307,1807,3307,3307,3307,3307,3307,3307,3307,3307,3307,1818,3307,3307,3307,3307,3307,
+1807,3307,3307,3307,3307,3307,3307,1807,3307,3307,1805,3307,3307,3307,3307,3307,1818,3307,3307,3307,
+3307,3307,3307,1806,3307,1805,3307,3307,3307,3307,3307,3307,3307,1819,3307,3307,3307,3307,3307,1818,
+1807,3307,3307,3307,3307,1820,3307,1805,3307,1807,1806,3307,3307,3307,3307,3307,3307,3307,3307,3307,
+3307,3307,1806,3307,1805,1805,3307,3307,3307,3307,3307,3307,3307,3307,3307,3307,3307,3307,1820,3307,
+3307,3307,1818,3307,3307,3307,3307,3307,1806,3307,3307,3307,1819,1819,3307,3307,3307,3307,3307,3307,
+1806,1806,3307,3307,1822,1806,3307,3307,3307,3307,3307,3307,3307,3307,3307,3307,1818,3307,3307,1819
+</data>
+ </layer>
+ <layer name="blockedLayer" width="20" height="20">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,1827,0,0,0,0,0,1821,0,0,0,0,0,0,0,0,0,
+1827,0,0,0,0,0,0,1825,0,0,0,0,0,0,0,0,2181,1823,1824,0,
+0,1825,0,0,1825,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,1813,2181,1822,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,1813,0,0,0,0,0,0,0,0,1823,1824,0,0,0,0,0,0,
+0,1825,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1823,1824,0,2181,
+0,0,0,0,1813,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,1813,0,0,1821,0,0,0,0,0,0,0,0,0,0,
+0,0,1827,0,0,0,0,0,0,0,0,0,0,0,0,0,1823,1824,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2181,0,0,0,0,
+1813,2181,0,0,1825,0,0,0,0,0,0,0,0,0,1821,0,0,0,0,0,
+0,0,0,0,0,0,1813,0,0,0,0,0,1821,0,0,0,1821,0,0,0,
+0,1827,0,0,1819,0,0,0,0,0,1822,0,0,0,0,1821,0,0,0,2181,
+1820,0,0,0,0,0,0,1820,0,0,1820,1821,2181,1822,0,0,0,1821,0,0,
+0,0,0,1819,0,1818,0,0,0,0,0,0,0,0,0,1821,0,0,0,0,
+1820,0,0,0,0,0,0,1818,0,1820,1819,0,0,0,1822,0,0,0,0,0,
+0,0,1819,0,1818,1818,0,0,0,0,0,0,1822,0,0,0,1822,0,0,0,
+0,0,0,0,0,0,0,0,1819,0,0,0,0,0,0,0,0,0,0,0,
+1819,1819,0,0,0,1819,0,0,0,0,1808,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup name="objectsLayer">
+  <object name="player" gid="71" x="7" y="317">
+   <properties>
+    <property name="type" value="playerStart"/>
+   </properties>
+  </object>
+  <object name="smallstones" gid="2123" x="79" y="321.5">
+   <properties>
+    <property name="sprite" value="smallstones"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstones" gid="2123" x="34.5" y="305.5">
+   <properties>
+    <property name="sprite" value="smallstones"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstones" gid="2123" x="23" y="206">
+   <properties>
+    <property name="sprite" value="smallstones"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstones" gid="2123" x="202.5" y="253">
+   <properties>
+    <property name="sprite" value="smallstones"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstones" gid="2123" x="180" y="255">
+   <properties>
+    <property name="sprite" value="smallstones"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstones" gid="2123" x="289.5" y="230">
+   <properties>
+    <property name="sprite" value="smallstones"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstones" gid="2123" x="238.5" y="191">
+   <properties>
+    <property name="sprite" value="smallstones"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstones" gid="2123" x="26" y="114">
+   <properties>
+    <property name="sprite" value="smallstones"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstones" gid="2123" x="100" y="93">
+   <properties>
+    <property name="sprite" value="smallstones"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstones" gid="2123" x="84" y="215">
+   <properties>
+    <property name="sprite" value="smallstones"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstick" gid="2124" x="148.723" y="328.008" rotation="-17.1982">
+   <properties>
+    <property name="sprite" value="smallstick"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstick" gid="2124" x="10.2231" y="204.508" rotation="-17.1982">
+   <properties>
+    <property name="sprite" value="smallstick"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstick" gid="2124" x="208.223" y="222.508" rotation="-17.1982">
+   <properties>
+    <property name="sprite" value="smallstick"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstick" gid="2124" x="88.3121" y="114.812" rotation="-44.0484">
+   <properties>
+    <property name="sprite" value="smallstick"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstick" gid="2124" x="11.3121" y="65.8121" rotation="-44.0484">
+   <properties>
+    <property name="sprite" value="smallstick"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="smallstick" gid="2124" x="187.812" y="112.812" rotation="-44.0484">
+   <properties>
+    <property name="sprite" value="smallstick"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object name="door" gid="3218" x="302" y="68">
+   <properties>
+    <property name="sprite" value="browndoor"/>
+    <property name="targetTilemap" value="tutorial_02"/>
+    <property name="targetX" value="20"/>
+    <property name="targetY" value="30"/>
+    <property name="type" value="door"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
