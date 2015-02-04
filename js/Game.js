@@ -25,7 +25,7 @@ TopDownGame.Game.prototype = {
         this.backgroundlayer = this.map.createLayer('backgroundLayer');
         this.floraLayer = this.map.createLayer('floraLayer');
         this.blockedLayer = this.map.createLayer('blockedLayer');
-        this.upperLayer = this.map.createLayer('upperLayer');
+        
 
         //collision on blockedLayer
         this.map.setCollisionBetween(1, 2000, true, 'blockedLayer');
@@ -40,6 +40,8 @@ TopDownGame.Game.prototype = {
         this.player = this.game.add.sprite(result[0].x, result[0].y, 'player');
         // add animations to player
         
+        this.upperLayer = this.map.createLayer('upperLayer');
+
         // Add physics
         this.game.physics.arcade.enable(this.player);
 
